@@ -1,0 +1,156 @@
+1. Check if a Number is a Power of 2
+
+import java.util.Scanner;
+
+public class PowerOfTwo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        boolean ans = (a > 0 && (a & (a - 1)) == 0);
+        System.out.println(ans);  // true if power of 2, false otherwise
+        sc.close();
+    }
+}
+
+2. Count the Number of Set Bits
+
+import java.util.Scanner;
+
+public class CountSetBits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int c = 0;
+        while (n != 0) {
+            c++;
+            n = n & (n - 1);
+        }
+        System.out.println(c);
+        sc.close();
+    }
+}
+
+3. Check if the ith Bit is Set or Not
+
+import java.util.Scanner;
+
+public class CheckIthBit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int i = sc.nextInt();
+        if ((n & (1 << i)) != 0) {
+            System.out.println("set");
+        } else {
+            System.out.println("unset");
+        }
+        sc.close();
+    }
+}
+
+4. Set the ith Bit
+
+import java.util.Scanner;
+
+public class SetIthBit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int i = sc.nextInt();
+        n = n | (1 << i);
+        System.out.println(n);
+        sc.close();
+    }
+}
+
+5. Unset the ith Bit
+
+import java.util.Scanner;
+
+public class UnsetIthBit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int i = sc.nextInt();
+        n = n & ~(1 << i);  // to make it zero at that position
+        System.out.println(n);
+        sc.close();
+    }
+}
+
+6. Swap Two Numbers Without Using a Temporary Variable
+
+import java.util.Scanner;
+
+public class SwapNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        a = a ^ b;
+        b = b ^ a;
+        a = a ^ b;
+        System.out.println(a + " " + b);
+        sc.close();
+    }
+}
+
+7. Check if a Number is Odd or Even
+
+import java.util.Scanner;
+
+public class OddOrEven {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if ((n & 1) == 1) {
+            System.out.println("odd");
+        } else {
+            System.out.println("even");
+        }
+        sc.close();
+    }
+}
+
+8. Convert Uppercase Character to Lowercase
+
+import java.util.Scanner;
+
+public class UpperToLower {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char c = sc.next().charAt(0);
+        c = (char) (c | (1 << 5));
+        System.out.println(c);
+        sc.close();
+    }
+}
+
+9. Convert Lowercase Character to Uppercase
+
+import java.util.Scanner;
+
+public class LowerToUpper {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char c = sc.next().charAt(0);
+        c = (char) (c & ~(1 << 5));
+        System.out.println(c);
+        sc.close();
+    }
+}
+
+10. Toggle the ith Bit
+
+import java.util.Scanner;
+
+public class ToggleIthBit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int c = sc.nextInt();
+        int i = sc.nextInt();
+        c = c ^ (1 << i);
+        System.out.println(c);
+        sc.close();
+    }
+}
